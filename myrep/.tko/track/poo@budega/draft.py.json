@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2025-10-30_15-11-43",
-            "content": "",
+            "content": "@@ -1,345 +0,0 @@\n-class Cliente: %0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A%0A    def getNome(self):%0A        return self.__nome%0A    %0A    def toString(self):%0A        return f%22Nome: %7Bself.__nome%7D%22%0A%0A%0Aclass Mercantil:%0A    def __init__(self, caixas: int):%0A        self.coixas = None%0A        self.fila: int = 0%0A%0A    def toString(self):%0A        %0A%0A    \n",
             "lines": "0"
+        },
+        {
+            "label": "2025-10-31_22-12-25",
+            "content": "class Cliente: \n    def __init__(self, nome: str):\n        self.__nome = nome\n\n    def getNome(self):\n        return self.__nome\n    \n    def toString(self):\n        return f\"Nome: {self.__nome}\"\n\n\nclass Mercantil:\n    def __init__(self, caixas: int):\n        self.coixas = None\n        self.fila: int = 0\n\n    def toString(self):\n        \n\n    ",
+            "lines": "20"
         }
     ]
 }
