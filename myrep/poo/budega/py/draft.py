@@ -13,7 +13,7 @@ class Mercantil:
         self.caixas: list[Cliente | None] = []
         self.fila: list[Cliente] = []
         
-        for _ in range (n_caixas): 
+        for _ in range (n_caixas):
             self.caixas.append(None) 
 
     def __str__(self): 
@@ -68,3 +68,25 @@ class Mercantil:
         return aux
         
 def main():
+    mercantil = Mercantil()
+    
+    While True:
+        
+        if args[0] == "show":
+            print(mercantil)
+
+        elif args[0] == "init":
+            mercantil = Mercantil(int(args[1]))
+
+        elif args[0] == "enter":
+            mercantil.chegar(Cliente(args[1]))
+            
+        elif args[0] == "call":
+            mercantil.chamar(int(args[1]))
+
+        elif args[0] == "finalizar":
+            cliente = mercantil.finalizar(int(args[1]))
+            if cliente:
+                print(f"Cliente {cliente.getNome()} finalizou compra")
+    
+main()
