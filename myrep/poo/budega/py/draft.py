@@ -68,25 +68,37 @@ class Mercantil:
         return aux
         
 def main():
-    mercantil = Mercantil()
+    mercantil = Mercantil | None = None
     
-    While True:
+    while True:
         
-        if args[0] == "show":
-            print(mercantil)
+        try:
+            line = input()
+            args = line.split()
 
-        elif args[0] == "init":
-            mercantil = Mercantil(int(args[1]))
-
-        elif args[0] == "enter":
-            mercantil.chegar(Cliente(args[1]))
+            if not args:
+                continue
             
-        elif args[0] == "call":
-            mercantil.chamar(int(args[1]))
+            print("$" + line)
+            cmd = args[0]
 
-        elif args[0] == "finalizar":
-            cliente = mercantil.finalizar(int(args[1]))
-            if cliente:
-                print(f"Cliente {cliente.getNome()} finalizou compra")
-    
+            if cmd == "init":
+                mercantil = Mercantil(int(args[1]))
+
+            elif cmd == "show":
+                print(mercantil)
+
+            elif cmd == "enter":
+                mercantil.chegar(Cliente(args[1]))
+            
+            elif cmd == "call":
+                mercantil.chamar(int(args[1]))
+
+            elif cmd == "finish":
+                cliente = mercantil.finish(int(args[1]))
+                if cliente:
+                    print(f"Cliente {cliente.getNome()} finalizou compra")
+        except EOFError:
+            break
+
 main()
