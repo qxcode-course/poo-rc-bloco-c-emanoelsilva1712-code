@@ -24,3 +24,10 @@
 2025-11-08 23:22:33, SELF, v:1, k:poo@budega
 2025-11-08 23:22:36, MOVE, v:1, k:poo@budega, mode:PICK
 2025-11-08 23:22:38, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-08 23:23:35, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:104
+2025-11-08 23:25:26, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-08 23:25:33, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-08 23:26:45, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-08 23:26:47, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-08 23:26:57, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-08 23:27:10, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
