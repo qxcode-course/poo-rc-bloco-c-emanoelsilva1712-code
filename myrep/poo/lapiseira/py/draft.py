@@ -6,6 +6,7 @@ class Lead:
 
     def usagePerSheet(self) -> int:
         #Retorna o desgaste do grafite por folha de acordo com a dureza.
+        
         desgaste = {
             "HB": 1,
             "2B": 2,
@@ -27,7 +28,7 @@ class Lapiseira:
     #ver se é compativel
     def insert(self, lead: Lead):
         if abs(lead.thickness - self.thickness) > 1e-6:
-            print("fail: calibre incompativel")
+            print("fail: calibre incompatível")
             return
         self.tambor.append(lead)   #Adiciona grafite no final
 
@@ -53,7 +54,7 @@ class Lapiseira:
     def writePage(self):
 
         if self.bico is None:
-            print("fail: nao existe no bico")
+            print("fail: nao existe grafite no bico")
             return
         
         if self.bico.size <= 10:
@@ -79,10 +80,9 @@ class Lapiseira:
         if not grafites_tambor_str_list:
             grafites_tambor_str = "<>"
         else:
-            grafites_tambor_str = "<" + ", ".join(grafites_tambor_str_list) + ">"
+            grafites_tambor_str = "<" + "".join(grafites_tambor_str_list) + ">"
 
         return f"calibre: {self.thickness}, bico: {grafite_bico_str}, tambor: {grafites_tambor_str}"
-
 
 def main():
     lapiseira = Lapiseira()

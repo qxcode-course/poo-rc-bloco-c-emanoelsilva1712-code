@@ -2,8 +2,83 @@
     "patches": [
         {
             "label": "2025-11-10_20-27-28",
-            "content": "",
+            "content": "@@ -1,2879 +0,0 @@\n-class Lead:%0A    def __init__(self, thickness: float, hardness: str, size: int):%0A        self.thickness = thickness%0A        self.hardness = hardness%0A        self.size = size%0A%0A    def usagePerSheet(self) -%3E int:%0A        %22%22%22Retorna o desgaste do grafite por folha de acordo com a dureza.%22%22%22%0A        desgaste = %7B%0A            %22HB%22: 1,%0A            %222B%22: 2,%0A            %224B%22: 4,%0A            %226B%22: 6%0A        %7D%0A        return desgaste.get(self.hardness, 1)%0A%0A    def __str__(self) -%3E str:%0A        return f%22%5B%7Bself.thickness%7D:%7Bself.hardness%7D:%7Bself.size%7D%5D%22%0A%0A%0Aclass Lapiseira:%0A    def __init__(self, thickness: float):%0A        self.thickness: float = thickness%0A        self.bico: Lead %7C None = None%0A        self.tambor: list%5BLead%5D = %5B%5D   #grafite no tambor%0A%0A    #ver se %C3%A9 compativel%0A    def insert(self, lead: Lead):%0A        if abs(lead.thickness - self.thickness) %3E 1e-6:%0A            print(%22fail: calibre incompativel%22)%0A            return%0A        self.tambor.append(lead)   #Adiciona grafite no final%0A%0A    def remove(self):%0A%0A        if self.bico is None:%0A            print(%22fail: nao existe bico%22)%0A            return%0A        %0A        self.bico = None #Remove o grafite do bico%0A%0A    def writePage(self):%0A%0A        if self.bico is None:%0A            print(%22fail: nao existe no bico%22)%0A            return%0A        %0A        if self.bico.size %3C= 10:%0A            print(%22fail: tamanho insuficiente%22)%0A            self.bico = None   #retira o grafite unutiu%0A            return%0A        %0A        desgaste = self.bico.usagePerSheet()%0A%0A        if self.bico.size - desgaste %3C 10:%0A            self.tip.size = 10%0A            print(%22fail: folha incompleta%22)%0A            self.bico = 10     #maximo do grafite%0A            return%0A        %0A        self.tip.size -= desgaste  #desgasta o grafite%0A%0A    def __str__(self):%0A%0A        grafite_bico_str = str(self.bico) if self.bico else %22null%22%0A        grafites_tambor_str_list = %5Bstr(g) for g in self.tambor%5D%0A        grafite_tambor_str = %22%5B%22 + %22, %22.join(grafites_tambor_str_list) + %22%5D%22%0A%0A        return f%22calibre: %7Bself.thickness%7D, bico: %7Bgrafite_str%7D, tambor: %7Bgrafite_tambor_str%7D%22%0A%0A%0Adef main():%0A    lapiseira = Lapiseira()%0A%0A    while True:%0A%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split()%0A%0A        if not args:%0A            continue%0A%0A        cmd = args%5B0%5D%0A%0A        if cmd == %22end%22:%0A            break%0A        elif cmd == %22init%22:%0A            lapiseira = Lapiseira (float(args%5B1%5D))%0A        elif cmd == %22insert%22:%0A            thickness = float(args%5B1%5D)%0A            hardness = args%5B2%5D%0A            size = int(args%5B3%5D)%0A            lead = Lead(thickness, hardness, size)%0A            lapiseira.insert(lead)%0A        elif cmd == %22remove%22:%0A            lapiseira.remove()%0A        elif cmd == %22write%22:%0A            lapiseira.writePage()%0A        elif cmd == %22show%22:%0A            print(lapiseira)%0A        else:%0A            print(%22fail: comando invalido%22)%0A%0A%0Amain()%0A\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-11-10_23-37-12",
+            "content": "@@ -211,17 +211,19 @@\n         \n-#\n+%22%22%22\n Retorna \n@@ -277,16 +277,19 @@\n  dureza.\n+%22%22%22\n %0A       \n@@ -599,14 +599,8 @@\n loat\n- = 0.0\n ):%0A \n@@ -1836,18 +1836,20 @@\n o else %22\n-%5B%5D\n+null\n %22%0A      \n@@ -1907,25 +1907,24 @@\n tambor%5D%0A\n-%0A\n         \n if not g\n@@ -1919,129 +1919,31 @@\n     \n-if not grafites_tambor_str_list:%0A            grafites_tambor_str = %22%3C%3E%22%0A        else:%0A            grafite_tambor_str = %22%3C\n+grafite_tambor_str = %22%5B\n %22 + \n@@ -1981,17 +1981,17 @@\n ist) + %22\n-%3E\n+%5D\n %22%0A%0A     \n@@ -2044,21 +2044,16 @@\n grafite_\n-bico_\n str%7D, ta\n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-10_23-51-28",
+            "content": "@@ -987,382 +987,8 @@\n al%0A%0A\n-    def pull(self):%0A        if self.bico is not None:%0A            print(%22fail: ja existe grafite no bico%22)%0A            return%0A        %0A        if not self.tambor:     #ola se o tambor esta vazio%0A            print(%22fail: nao existe grafite no tambor%22)%0A            return%0A        %0A        self.bico = self.tambor.pop(0)  #Remove o primeiro grafite do tambor e coloca no bico%0A%0A\n     \n@@ -2731,104 +2731,8 @@\n ad)%0A\n-        elif cmd == %22ull%22:  #puxa um grafite do tambor para o bico%0A            lapiseira.pull()%0A\n     \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-11_00-00-28",
+            "content": "@@ -1930,28 +1930,27 @@\n        self.\n-bico\n+tip\n .size = 10%0A \n@@ -2079,28 +2079,27 @@\n        self.\n-bico\n+tip\n .size -= des\n@@ -2386,33 +2386,32 @@\n          grafite\n-s\n _tambor_str = %22%3C\n@@ -3122,17 +3122,16 @@\n cmd == %22\n-p\n ull%22:  #\n",
+            "lines": "123"
+        },
+        {
+            "label": "2025-11-11_00-14-53",
+            "content": "@@ -2542,25 +2542,24 @@\n or: %7Bgrafite\n-s\n _tambor_str%7D\n",
+            "lines": "123"
+        },
+        {
+            "label": "2025-11-11_10-12-44",
+            "content": "@@ -898,9 +898,9 @@\n mpat\n-%C3%AD\n+i\n vel%22\n",
+            "lines": "123"
+        },
+        {
+            "label": "2025-11-11_10-15-06",
+            "content": "@@ -2418,16 +2418,18 @@\n  %22%3C%22 + %22\n+, \n %22.join(g\n",
+            "lines": "123"
+        },
+        {
+            "label": "2025-11-11_10-17-06",
+            "content": "@@ -1621,32 +1621,24 @@\n  nao existe \n-grafite \n no bico%22)%0A  \n",
+            "lines": "123"
+        },
+        {
+            "label": "2025-11-11_10-17-49",
+            "content": "@@ -2516,17 +2516,16 @@\n , bico: \n-%5B\n %7Bgrafite\n@@ -2534,17 +2534,16 @@\n ico_str%7D\n-%5D\n , tambor\n",
+            "lines": "123"
+        },
+        {
+            "label": "2025-11-11_10-19-01",
+            "content": "@@ -2516,16 +2516,17 @@\n , bico: \n+%5B\n %7Bgrafite\n@@ -2535,16 +2535,17 @@\n ico_str%7D\n+%5D\n , tambor\n@@ -2570,16 +2570,17 @@\n _str%7D%22%0A%0A\n+%0A\n def main\n",
+            "lines": "123"
+        },
+        {
+            "label": "2025-11-11_10-20-09",
+            "content": "@@ -67,19 +67,19 @@\n , size: \n-str\n+int\n ):%0A     \n",
+            "lines": "122"
+        },
+        {
+            "label": "2025-11-11_10-27-08",
+            "content": "@@ -67,19 +67,19 @@\n , size: \n-int\n+str\n ):%0A     \n",
+            "lines": "122"
+        },
+        {
+            "label": "2025-11-11_10-30-20",
+            "content": "@@ -276,25 +276,16 @@\n dureza.%0A\n-        %0A\n         \n",
+            "lines": "122"
+        },
+        {
+            "label": "2025-11-11_10-30-52",
+            "content": "@@ -276,16 +276,24 @@\n dureza.%0A\n+        \n %0A       \n@@ -1938,32 +1938,51 @@\n 10:%0A            \n+self.bico.size = 10\n %0A            pri\n",
+            "lines": "123"
+        },
+        {
+            "label": "2025-11-11_10-35-03",
+            "content": "@@ -276,24 +276,16 @@\n dureza.%0A\n-        \n %0A       \n@@ -1942,27 +1942,8 @@\n     \n-self.bico.size = 10\n %0A   \n",
+            "lines": "123"
+        },
+        {
+            "label": "2025-11-11_11-01-51",
+            "content": "class Lead:\n    def __init__(self, thickness: float, hardness: str, size: int):\n        self.thickness = thickness\n        self.hardness = hardness\n        self.size = size\n\n    def usagePerSheet(self) -> int:\n        #Retorna o desgaste do grafite por folha de acordo com a dureza.\n        \n        desgaste = {\n            \"HB\": 1,\n            \"2B\": 2,\n            \"4B\": 4,\n            \"6B\": 6\n        }\n        return desgaste.get(self.hardness, 1)\n\n    def __str__(self) -> str:\n        return f\"[{self.thickness}:{self.hardness}:{self.size}]\"\n\n\nclass Lapiseira:\n    def __init__(self, thickness: float = 0.0):\n        self.thickness: float = thickness\n        self.bico: Lead | None = None\n        self.tambor: list[Lead] = []   #grafite no tambor\n\n    #ver se \u00e9 compativel\n    def insert(self, lead: Lead):\n        if abs(lead.thickness - self.thickness) > 1e-6:\n            print(\"fail: calibre incompat\u00edvel\")\n            return\n        self.tambor.append(lead)   #Adiciona grafite no final\n\n    def pull(self):\n        if self.bico is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return\n        \n        if not self.tambor:     #ola se o tambor esta vazio\n            print(\"fail: nao existe grafite no tambor\")\n            return\n        \n        self.bico = self.tambor.pop(0)  #Remove o primeiro grafite do tambor e coloca no bico\n\n    def remove(self):\n\n        if self.bico is None:\n            print(\"fail: nao existe bico\")\n            return\n        \n        self.bico = None #Remove o grafite do bico\n\n    def writePage(self):\n\n        if self.bico is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n        \n        if self.bico.size <= 10:\n            print(\"fail: tamanho insuficiente\")\n            self.bico = None   #retira o grafite unutiu\n            return\n        \n        desgaste = self.bico.usagePerSheet()\n\n        if self.bico.size - desgaste < 10:\n            self.bico.size = 10\n            print(\"fail: folha incompleta\")\n            self.bico = 10     #maximo do grafite\n            return\n        \n        self.bico.size -= desgaste  #desgasta o grafite\n\n    def __str__(self):\n\n        grafite_bico_str = str(self.bico) if self.bico else \"[]\"\n        grafites_tambor_str_list = [str(g) for g in self.tambor]\n\n        if not grafites_tambor_str_list:\n            grafites_tambor_str = \"<>\"\n        else:\n            grafites_tambor_str = \"<\" + \"\".join(grafites_tambor_str_list) + \">\"\n\n        return f\"calibre: {self.thickness}, bico: {grafite_bico_str}, tambor: {grafites_tambor_str}\"\n\ndef main():\n    lapiseira = Lapiseira()\n\n    while True:\n\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n\n        if not args:\n            continue\n\n        cmd = args[0]\n\n        if cmd == \"end\":\n            break\n        elif cmd == \"init\":\n            lapiseira = Lapiseira (float(args[1]))\n        elif cmd == \"insert\":\n            thickness = float(args[1])\n            hardness = args[2]\n            size = int(args[3])\n            lead = Lead(thickness, hardness, size)\n            lapiseira.insert(lead)\n        elif cmd == \"pull\":  #puxa um grafite do tambor para o bico\n            lapiseira.pull()\n        elif cmd == \"remove\":\n            lapiseira.remove()\n        elif cmd == \"write\":\n            lapiseira.writePage()\n        elif cmd == \"show\":\n            print(lapiseira)\n        else:\n            print(\"fail: comando invalido\")\n\n\nmain()\n",
+            "lines": "123"
         }
     ]
 }
