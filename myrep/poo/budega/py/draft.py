@@ -38,22 +38,22 @@ class Mercantil:
 
     def chamar(self, index: int):
 
-        if self.caixas[index] is not None:
-            print("fail: caixa ocupado")
+        if index < 0 or index >= len(self.caixas):
+            print("fail: caixa inexistente")
             return
 
         elif len(self.fila) == 0:
             print("fail: fila vazia")
             return
 
-        elif index > 0 or index >= len(self.caixas):
-            print("fail: caixa inexistente")
+        elif self.caixas[index] is not None:
+            print("fail: caixa ocupado")
             return
 
         self.caixas[index] = self.fila[0]
-        del self.fila[0]
 
     def finish(self, index: int) -> Cliente | None:
+
         if index < 0 or index >= len(self.caixas):
             print("fail: caixa inexistente")
             return None
