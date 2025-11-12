@@ -43,7 +43,7 @@ class Mercantil:
             return
 
         elif len(self.fila) == 0:
-            print("fail: fila vazia")
+            print("fail: sem clientes")
             return
 
         elif self.caixas[index] is not None:
