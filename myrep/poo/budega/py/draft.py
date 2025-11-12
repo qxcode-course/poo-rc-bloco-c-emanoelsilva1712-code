@@ -50,7 +50,7 @@ class Mercantil:
             print("fail: caixa ocupado")
             return
 
-        self.caixas[index] = self.fila[0]
+        self.caixas[index] = self.fila.pop(0)    #pop = retorno o primeiro cliente da fila e retorna ele
 
     def finish(self, index: int) -> Cliente | None:
 
@@ -58,7 +58,7 @@ class Mercantil:
             print("fail: caixa inexistente")
             return None
 
-        elif self.caixas is None:
+        elif self.caixas[index] is None:
             print("fail: caixa vazio")
             return None
             

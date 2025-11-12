@@ -67,7 +67,6 @@ class Lapiseira:
         if self.bico.size - desgaste < 10:
             self.bico.size = 10
             print("fail: folha incompleta")
-            self.bico = 10     #maximo do grafite
             return
         
         self.bico.size -= desgaste  #desgasta o grafite

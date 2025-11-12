@@ -77,7 +77,47 @@
         },
         {
             "label": "2025-11-09_23-38-55",
-            "content": "class Cliente: \n    def __init__(self, nome: str):\n        self.__nome = nome\n\n    def getNome(self):\n        return self.__nome\n    \n    def __str__(self):\n        return f\"{self.__nome}\"\n\nclass Mercantil:\n    def __init__(self, n_caixas: int):\n        self.caixas: list[Cliente | None] = []\n        self.fila: list[Cliente] = []\n        \n        for _ in range (n_caixas):\n            self.caixas.append(None) \n\n    def __str__(self): \n        caixas = \", \".join([str(x) if x else \"-----\" for x in self.caixas])\n        fila = \", \".join([str(x) for x in self.fila])\n        return f\"Caixas: [{caixas}]\\nEspera: [{fila}]\"\n    \n    def map(self, lista: list):\n        ls: list = []\n        for elemento in lista:\n            if elemento is None:\n                ls.append(\"-----\")\n            else:\n                ls.append(str(elemento))\n        return ls\n        # variavel = map (caixas)\n        # variavel = map (fila)\n\n\n    def chegar(self, Cliente: Cliente):\n        self.fila.append(Cliente)\n\n    def chamar(self, index: int):\n\n        if self.caixas[index] is not None:\n            print(\"fail: caixa ocupado\")\n            return\n\n        elif len(self.fila) == 0:\n            print(\"fail: fila vazia\")\n            return\n\n        elif index > 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return\n\n        self.caixas[index] = self.fila[0]\n        del self.fila[0]\n\n    def finish(self, index: int) -> Cliente | None:\n        if index < 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return None\n\n        elif self.caixas is None:\n            print(\"fail: caixa vazio\")\n            return None\n            \n        aux = self.caixas[index]\n\n        self.caixas[index] = None\n        return aux\n        \ndef main():\n    mercantil: Mercantil | None = None\n    \n    while True:\n        try:\n            line = input()\n            args = line.split()\n\n            if not args:\n                continue\n            \n            print(\"$\" + line)\n            cmd = args[0]\n\n            if cmd == \"init\":\n                mercantil = Mercantil(int(args[1]))\n\n            elif cmd == \"show\":\n                print(mercantil)\n\n            elif cmd == \"arrive\":\n                mercantil.chegar(Cliente(args[1]))\n            \n            elif cmd == \"call\":\n                mercantil.chamar(int(args[1]))\n\n            elif cmd == \"finish\":\n                mercantil.finish(int(args[1]))\n                \n        except EOFError:\n\n            break\n\nmain()",
+            "content": "@@ -1044,46 +1044,38 @@\n  if \n-index %3C 0 or index %3E= len(self.caixas)\n+self.caixas%5Bindex%5D is not None\n :%0A  \n@@ -1099,35 +1099,31 @@\n fail: caixa \n-inexistente\n+ocupado\n %22)%0A         \n@@ -1242,38 +1242,46 @@\n lif \n-self.caixas%5Bindex%5D is not None\n+index %3E 0 or index %3E= len(self.caixas)\n :%0A  \n@@ -1301,39 +1301,43 @@\n nt(%22fail: caixa \n-ocupado\n+inexistente\n %22)%0A            r\n@@ -1384,16 +1384,41 @@\n .fila%5B0%5D\n+%0A        del self.fila%5B0%5D\n %0A%0A    de\n@@ -1463,17 +1463,16 @@\n %7C None:%0A\n-%0A\n         \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-11_21-18-33",
+            "content": "@@ -1385,68 +1385,11 @@\n fila\n-.pop%5B0%5D    #retorno o primeiro cliente da fila e retorna ele\n+%5B0%5D\n %0A%0A  \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-11_22-47-49",
+            "content": "@@ -1637,31 +1637,24 @@\n  self.caixas\n-%5Bindex%5D\n  is None:%0A  \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-11_22-48-13",
+            "content": "@@ -1382,16 +1382,19 @@\n lf.fila.\n+pop\n %5B0%5D    #\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-11_22-49-13",
+            "content": "@@ -1386,11 +1386,8 @@\n ila.\n-pop\n %5B0%5D \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-11_22-49-22",
+            "content": "@@ -1641,16 +1641,23 @@\n f.caixas\n+%5Bindex%5D\n  is None\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-11_22-49-33",
+            "content": "@@ -1637,31 +1637,24 @@\n  self.caixas\n-%5Bindex%5D\n  is None:%0A  \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-11_22-49-41",
+            "content": "@@ -1389,22 +1389,16 @@\n .pop\n-(0)\n+%5B0%5D\n     #\n-pop = \n reto\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-11_22-51-53",
+            "content": "class Cliente: \n    def __init__(self, nome: str):\n        self.__nome = nome\n\n    def getNome(self):\n        return self.__nome\n    \n    def __str__(self):\n        return f\"{self.__nome}\"\n\nclass Mercantil:\n    def __init__(self, n_caixas: int):\n        self.caixas: list[Cliente | None] = []\n        self.fila: list[Cliente] = []\n        \n        for _ in range (n_caixas):\n            self.caixas.append(None) \n\n    def __str__(self): \n        caixas = \", \".join([str(x) if x else \"-----\" for x in self.caixas])\n        fila = \", \".join([str(x) for x in self.fila])\n        return f\"Caixas: [{caixas}]\\nEspera: [{fila}]\"\n    \n    def map(self, lista: list):\n        ls: list = []\n        for elemento in lista:\n            if elemento is None:\n                ls.append(\"-----\")\n            else:\n                ls.append(str(elemento))\n        return ls\n        # variavel = map (caixas)\n        # variavel = map (fila)\n\n\n    def chegar(self, Cliente: Cliente):\n        self.fila.append(Cliente)\n\n    def chamar(self, index: int):\n\n        if index < 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return\n\n        elif len(self.fila) == 0:\n            print(\"fail: fila vazia\")\n            return\n\n        elif self.caixas[index] is not None:\n            print(\"fail: caixa ocupado\")\n            return\n\n        self.caixas[index] = self.fila.pop(0)    #pop = retorno o primeiro cliente da fila e retorna ele\n\n    def finish(self, index: int) -> Cliente | None:\n\n        if index < 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return None\n\n        elif self.caixas[index] is None:\n            print(\"fail: caixa vazio\")\n            return None\n            \n        aux = self.caixas[index]\n\n        self.caixas[index] = None\n        return aux\n        \ndef main():\n    mercantil: Mercantil | None = None\n    \n    while True:\n        try:\n            line = input()\n            args = line.split()\n\n            if not args:\n                continue\n            \n            print(\"$\" + line)\n            cmd = args[0]\n\n            if cmd == \"init\":\n                mercantil = Mercantil(int(args[1]))\n\n            elif cmd == \"show\":\n                print(mercantil)\n\n            elif cmd == \"arrive\":\n                mercantil.chegar(Cliente(args[1]))\n            \n            elif cmd == \"call\":\n                mercantil.chamar(int(args[1]))\n\n            elif cmd == \"finish\":\n                mercantil.finish(int(args[1]))\n                \n        except EOFError:\n\n            break\n\nmain()",
             "lines": "103"
         }
     ]

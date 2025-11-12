@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\emano\OneDrive\Documentos\POO_C\poo-rc-bloco-c-emanoelsilva1712-code\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-11 10:02:32'
+  cache_timestamp: '2025-11-11 22:39:15'
   filters:
   - listas
 expanded:
@@ -20,7 +20,7 @@ expanded:
 - poo@bloco_c-listas
 tasks:
   poo@budega: '{rate:60}'
-  poo@lapiseira: '{rate:85, alone:8}'
+  poo@lapiseira: '{rate:100, alone:10}'
 flags:
   quests: 0
   tracks: 0
@@ -28,4 +28,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@lapiseira
+selected: poo@budega
