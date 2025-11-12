@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-12_10-30-27",
+            "content": "@@ -1,12 +0,0 @@\n-print(%22ola%22)\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-12_10-38-01",
+            "content": "@@ -1,519 +1,12 @@\n-class Pessoa:%0A    def __init__(self):%0A        self.idades = %5B%5D%0A%0A    def __str__(self):%0A        return f%22idades: %7Bself.idades%7D%22%0A    %0A    def __init__(self, lista_idades: list%5Bint%5D):%0A        self.idades = lista_idades%0A%0A    def add_idade(self, idades: int):%0A        self.idades.append(idades)%0A    %0A    def remv_idade(self, idades: int):%0A        self.idades.pop(idades)%0A%0A    def add_idades(self, idades: int):%0A        self.idades.insert(0, idades)%0A%0A    def remv_idades(self, idades: int):%0A        self.idades.pop(0)%0A%0A%0A%0A    \n+print(%22ola%22)\n",
+            "lines": "1"
+        },
+        {
+            "label": "2025-11-12_11-17-02",
+            "content": "@@ -214,125 +214,8 @@\n es%0A%0A\n-    def __init__(self):%0A        idades = %5B10, 20, 30, 40, 50%5D%0A%0A        tamanho = len(idades)%0A        print(tamanho)%0A%0A\n     \n@@ -275,19 +275,16 @@\n .append(\n-5, \n idades)%0A\n@@ -355,11 +355,8 @@\n pop(\n-5, \n idad\n@@ -470,32 +470,32 @@\n , idades: int):%0A\n+\n         self.ida\n@@ -507,170 +507,8 @@\n op(0\n-, idades)%0A%0A    def add_idades(self, idades: int):%0A        self.idades.insert(3, idades)%0A%0A    def remv_idades(self, idades: int):%0A        self.idades.pop(3, idades\n )%0A%0A%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-11-12_11-40-54",
+            "content": "@@ -795,420 +795,10 @@\n s)%0A%0A\n-def main():%0A    pessoa = Pessoa()%0A    while True:%0A        line = input()%0A        args = line.split()%0A%0A        cmd = args%5B0%5D%0A%0A        if cmd == %22init%22:%0A            passoa = Pessoa()%0A%0A        elif cmd == %22show%22:%0A            print(pessoa)%0A%0A        elif cmd == %22adicionar idades%22:%0A            pessoa.add_idade(int(args%5B1%5D))%0A    %0A        elif cmd == %22remover idades%22:%0A            pessoa.remv_idade(int(args%5B1%5D))%0A%0A    \n+%0A%0A\n     \n",
+            "lines": "37"
+        },
+        {
+            "label": "2025-11-12_11-55-25",
+            "content": "class Pessoa:\n    def __init__(self):\n        self.idades = []\n\n    def __str__(self):\n        return f\"idades: {self.idades}\"\n    \n    def __init__(self, lista_idades: list[int]):\n        self.idades = lista_idades\n\n    def __init__(self):\n        idades = [10, 20, 30, 40, 50]\n\n        tamanho = len(idades)\n        print(tamanho)\n\n    def add_idade(self, idades: int):\n        self.idades.append(5, idades)\n    \n    def remv_idade(self, idades: int):\n        self.idades.pop(5, idades)\n\n    def add_idades(self, idades: int):\n        self.idades.insert(0, idades)\n\n    def remv_idades(self, idades: int):\n        self.idades.pop(0, idades)\n\n    def add_idades(self, idades: int):\n        self.idades.insert(3, idades)\n\n    def remv_idades(self, idades: int):\n        self.idades.pop(3, idades)\n\ndef main():\n    pessoa = Pessoa()\n    while True:\n        line = input()\n        args = line.split()\n\n        cmd = args[0]\n\n        if cmd == \"init\":\n            passoa = Pessoa()\n\n        elif cmd == \"show\":\n            print(pessoa)\n\n        elif cmd == \"adicionar idades\":\n            pessoa.add_idade(int(args[1]))\n    \n        elif cmd == \"remover idades\":\n            pessoa.remv_idade(int(args[1]))\n\n        ",
+            "lines": "55"
+        }
+    ]
+}
