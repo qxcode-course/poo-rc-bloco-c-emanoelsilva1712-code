@@ -1,0 +1,124 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-15_15-00-57",
+            "content": "@@ -1,130 +0,0 @@\n-class Pula:%0A    def __init__(self):%0A        %0A%0Aclass Pessoa:%0A    def __init__(self):%0A        self.nome: str%0A        self.idade: int\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-15_15-16-57",
+            "content": "@@ -1,19 +1,17 @@\n class P\n-esso\n+ul\n a:%0A    d\n@@ -41,126 +41,17 @@\n     \n-self.nome: str%0A        self.idade: int%0A%0A    def __str__(self):%0A        return f%22%7Bself.nome%7D:%7Bself.idade%7D%22%0A    \n+%0A\n %0Aclass P\n ula:\n@@ -42,26 +42,28 @@\n    %0A%0Aclass P\n-ul\n+esso\n a:%0A    def _\n@@ -94,110 +94,37 @@\n elf.\n-fila: list%5Bint%5D = %5B%5D%0A%0A    def inserir(self, Pessoa: Pessoa):%0A        self.fila.append(Pessoa())%0A%0A    %0A    \n+nome: str%0A        self.idade: int\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-15_15-28-09",
+            "content": "@@ -304,126 +304,9 @@\n     \n-def pulando(self):%0A        self.fila.insert(0, Pessoa())%0A    %0A    def remover(self):%0A        self.fila.pop(0)%0A%0Adef main():\n+%0A    \n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-11-15_15-39-25",
+            "content": "@@ -426,186 +426,4 @@\n n():\n-%0A    pula = pula():%0A    while True:%0A%0A        line = input()%0A        args = line.split()%0A%0A        if args(0) == %22enter%22:%0A            pula.inserir(Pessoa())%0A%0A        elif args(0) == %22%22\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-15_16-19-59",
+            "content": "@@ -607,110 +607,5 @@\n == %22\n-show%22:%0A            print(pula.fila)%0A%0A        elif args(0) == %22leave%22:%0A            pula.remover()%0A%0A        \n+%22\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-15_16-28-08",
+            "content": "@@ -538,14 +538,13 @@\n == %22\n-arrive\n+enter\n %22:%0A \n@@ -578,15 +578,8 @@\n soa(\n-args%5B1%5D\n ))%0A%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-15_16-31-00",
+            "content": "@@ -440,16 +440,17 @@\n = pula()\n+:\n %0A    whi\n@@ -640,16 +640,21 @@\n int(pula\n+.fila\n )%0A%0A     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-15_16-31-57",
+            "content": "@@ -667,20 +667,19 @@\n (0) == %22\n-remo\n+lea\n ve%22:%0A   \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-15_16-33-55",
+            "content": "@@ -398,18 +398,18 @@\n    self.\n-pu\n+fi\n la.pop(0\n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-15_16-36-36",
+            "content": "@@ -32,31 +32,8 @@\n self\n-, nome: str, idade: int\n ):%0A \n@@ -52,15 +52,13 @@\n nome\n- = nome\n+: str\n %0A   \n@@ -75,20 +75,18 @@\n idade: i\n-dade\n+nt\n %0A%0A    de\n@@ -210,22 +210,19 @@\n a: list%5B\n-Pessoa\n+int\n %5D = %5B%5D%0A%0A\n@@ -398,18 +398,18 @@\n    self.\n-fi\n+pu\n la.pop(0\n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-15_16-43-13",
+            "content": "@@ -269,25 +269,25 @@\n serir(self, \n-p\n+P\n essoa: Pesso\n@@ -315,17 +315,17 @@\n .append(\n-p\n+P\n essoa())\n@@ -350,24 +350,8 @@\n self\n-, pessoa: Pessoa\n ):%0A \n@@ -377,17 +377,17 @@\n sert(0, \n-p\n+P\n essoa())\n@@ -464,17 +464,17 @@\n  pula = \n-P\n+p\n ula()%0A  \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-15_16-50-39",
+            "content": "@@ -567,27 +567,27 @@\n      if args\n-%5B0%5D\n+(0)\n  == %22arrive%22\n@@ -592,63 +592,8 @@\n e%22:%0A\n-            nome = args%5B1%5D%0A            idade = args%5B2%5D%0A\n     \n@@ -624,19 +624,15 @@\n soa(\n-nome, idade\n+args%5B1%5D\n ))%0A%0A\n@@ -644,27 +644,27 @@\n    elif args\n-%5B0%5D\n+(0)\n  == %22show%22:%0A\n@@ -709,11 +709,11 @@\n args\n-%5B0%5D\n+(0)\n  == \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-15_16-54-04",
+            "content": "@@ -253,47 +253,8 @@\n = %5B%5D\n-%0A        self.dentro: list%5BPessoa%5D = %5B%5D\n %0A%0A  \n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-15_17-17-20",
+            "content": "@@ -298,22 +298,23 @@\n     def \n-arrive\n+inserir\n (self, p\n@@ -318,16 +318,24 @@\n , pessoa\n+: Pessoa\n ):%0A     \n@@ -351,18 +351,15 @@\n ila.\n-insert(0, \n+append(\n pess\n@@ -377,18 +377,36 @@\n def \n-enter(self\n+pulando(self, pessoa: Pessoa\n ):%0A \n@@ -408,27 +408,24 @@\n a):%0A        \n-if \n self.fila:%0A \n@@ -425,59 +425,33 @@\n fila\n-:%0A            self.dentro.insert(self.fila.pop(0))%0A\n+.insert(0, pessoa())%0A    \n %0A   \n@@ -459,13 +459,15 @@\n def \n-lea\n+remo\n ve\n+r\n (sel\n@@ -482,72 +482,24 @@\n     \n-if self.dentro:%0A            self.fila.insert(self.dentro\n+self.fila\n .pop(0)\n-)\n %0A%0Ade\n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-15_17-26-04",
+            "content": "@@ -551,558 +551,8 @@\n ))%0A%0A\n-    def remove(self, nome):     #remove da fila%0A        for i, p in enumerate(self.fila):%0A            if p.nome == nome:%0A                self.fila.pop(i)%0A                return%0A            %0A        for i, p in enumerate(self.dentro):   #remove do pula pula%0A            if p.nome == nome:%0A                self.dentro.pop(i)%0A                return%0A            %0A    def __str__(self):%0A        fila = %22%5B%22 + %22, %22.join(str(p) for p in self.fila + %22%5D%22%0A        dentro = %22%5B%22 + %22, %22.join(str(p) for p in self.dentro + %22%5D%22%0A        return f%22%7Bfila%7D =%3E %7Bdentro%7D%22%0A%0A\n def \n@@ -673,11 +673,14 @@\n == %22\n-end\n+arrive\n %22:%0A \n@@ -694,213 +694,95 @@\n     \n-break%0A%0A        if args%5B0%5D == %22arrive%22:%0A            pula.arrive(Pessoa(args%5B1%5D, args%5B2%5D))%0A%0A        elif args%5B0%5D == %22enter%22:%0A            pula.enter()%0A%0A        elif args%5B0%5D == %22leave%22:%0A            pula.leave(\n+nome = args%5B1%5D%0A            idade = args%5B2%5D%0A            pula.inserir(Pessoa(nome, idade)\n )%0A%0A \n@@ -898,16 +898,10 @@\n move\n+r\n (\n-args%5B1%5D\n )%0A%0A \n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-15_17-43-08",
+            "content": "@@ -1143,16 +1143,17 @@\n e True:%0A\n+%0A\n         \n@@ -1171,34 +1171,8 @@\n t()%0A\n-        print(f%22$%7Bline%7D%22)%0A\n     \n@@ -1244,34 +1244,32 @@\n  break%0A%0A        \n-el\n if args%5B0%5D == %22a\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-15_17-53-39",
+            "content": "@@ -985,17 +985,16 @@\n elf.fila\n-)\n  + %22%5D%22%0A \n@@ -1052,17 +1052,16 @@\n f.dentro\n-)\n  + %22%5D%22%0A \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-15_17-55-12",
+            "content": "@@ -101,21 +101,15 @@\n dade\n+:\n  \n-= int(\n idade\n-)\n %0A%0A  \n@@ -354,16 +354,18 @@\n , pessoa\n+()\n )%0A%0A    d\n@@ -433,19 +433,16 @@\n .insert(\n-0, \n self.fil\n@@ -451,10 +451,9 @@\n pop(\n--1\n+0\n ))%0A%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-15_17-59-55",
+            "content": "@@ -530,27 +530,24 @@\n fila.insert(\n-0, \n self.dentro.\n@@ -546,26 +546,25 @@\n .dentro.pop(\n--1\n+0\n ))%0A%0A    def \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-15_18-00-25",
+            "content": "@@ -344,23 +344,26 @@\n lf.fila.\n-append(\n+insert(0, \n pessoa)%0A\n@@ -422,198 +422,146 @@\n     \n-crian%C3%A7a = self.fila.pop(0)%0A            self.dentro.append(crian%C3%A7a)%0A%0A    def leave(self):%0A        if self.dentro:%0A            crian%C3%A7a = self.dentro.pop(0)%0A            self.fila.append(crian%C3%A7a\n+self.dentro.insert(0, self.fila.pop(-1))%0A%0A    def leave(self):%0A        if self.dentro:%0A            self.fila.insert(0, self.dentro.pop(-1)\n )%0A%0A \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-15_18-06-49",
+            "content": "@@ -348,14 +348,14 @@\n ila.\n-insert\n+append\n (pes\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-15_18-13-49",
+            "content": "@@ -355,11 +355,8 @@\n ert(\n-0, \n pess\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-15_18-15-47",
+            "content": "@@ -638,16 +638,36 @@\n , nome):\n+     #remove da fila\n %0A       \n@@ -844,16 +844,39 @@\n dentro):\n+   #remove do pula pula\n %0A       \n@@ -1662,8 +1662,17 @@\n rgs%5B1%5D)%0A\n+%0A        \n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-15_18-19-16",
+            "content": "class Pessoa:\n    def __init__(self, nome: str, idade: int):\n        self.nome = nome\n        self.idade = int(idade)\n\n    def __str__(self):\n        return f\"{self.nome}:{self.idade}\"\n    \nclass Pula:\n    def __init__(self):\n        self.fila: list[Pessoa] = []\n        self.dentro: list[Pessoa] = []\n\n    def arrive(self, pessoa):\n        self.fila.insert(0, pessoa)\n\n    def enter(self):\n        if self.fila:\n            crian\u00e7a = self.fila.pop(0)\n            self.dentro.append(crian\u00e7a)\n\n    def leave(self):\n        if self.dentro:\n            crian\u00e7a = self.dentro.pop(0)\n            self.fila.append(crian\u00e7a)\n\n    def remove(self, nome):\n        for i, p in enumerate(self.fila):\n            if p.nome == nome:\n                self.fila.pop(i)\n                return\n            \n        for i, p in enumerate(self.dentro):\n            if p.nome == nome:\n                self.dentro.pop(i)\n                return\n            \n    def __str__(self):\n        fila = \"[\" + \", \".join(str(p) for p in self.fila) + \"]\"\n        dentro = \"[\" + \", \".join(str(p) for p in self.dentro) + \"]\"\n        return f\"{fila} => {dentro}\"\n\ndef main():\n    pula = Pula()\n    while True:\n        line = input()\n        print(f\"${line}\")\n        args = line.split()\n\n        if args[0] == \"end\":\n            break\n\n        elif args[0] == \"arrive\":\n            pula.arrive(Pessoa(args[1], args[2]))\n\n        elif args[0] == \"enter\":\n            pula.enter()\n\n        elif args[0] == \"leave\":\n            pula.leave()\n\n        elif args[0] == \"show\":\n            print(pula)\n\n        elif args[0] == \"remove\":\n            pula.remove(args[1])\n",
+            "lines": "66"
+        }
+    ]
+}

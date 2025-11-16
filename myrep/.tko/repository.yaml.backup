@@ -12,14 +12,14 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\emano\OneDrive\Documentos\POO_C\poo-rc-bloco-c-emanoelsilva1712-code\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-12 10:28:50'
+  cache_timestamp: '2025-11-15 22:31:46'
   filters:
   - listas
 expanded:
 - poo@campanha-principal
 - poo@bloco_c-listas
 tasks:
-  poo@budega: '{rate:60}'
+  poo@budega: '{rate:60, alone:10}'
   poo@lapiseira: '{rate:100, alone:10}'
 flags:
   quests: 0
@@ -28,4 +28,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@array
+selected: poo@lapiseira
