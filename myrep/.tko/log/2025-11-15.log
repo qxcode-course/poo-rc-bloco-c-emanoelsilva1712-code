@@ -49,3 +49,5 @@
 2025-11-15 18:14:39, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
 2025-11-15 18:15:47, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:68
 2025-11-15 18:19:16, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:66
+2025-11-15 22:50:40, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-15 22:50:45, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:68

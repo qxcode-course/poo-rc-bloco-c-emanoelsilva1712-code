@@ -1,7 +1,19 @@
 class Pessoa:
     def __init__(self, nome: str, idade: int):
-        self.nome = nome
-        self.idade = int(idade)
+        self.__nome = nome
+        self.__idade = idade
+
+    def getAge(self):
+        return self.__idade
+    
+    def getNome(self):
+        return self.__nome
+
+    def setAge(self, age: int):
+        self.__idade = age
+
+    def setNome(self, nome: str):
+        self.__nome = nome
 
     def __str__(self):
         return f"{self.nome}:{self.idade}"
