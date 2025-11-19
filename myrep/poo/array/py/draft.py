@@ -2,17 +2,13 @@ class Pessoa:
     def __init__(self):
         self.idades = []
 
-    def __str__(self):
-        return f"idades: {self.idades}"
-    
-    def __init__(self, lista_idades: list[int]):
-        self.idades = lista_idades
-
     def __init__(self):
         idades = [10, 20, 30, 40, 50]
-
         tamanho = len(idades)
         print(tamanho)
+
+    def __str__(self):
+        return f"idades: {self.idades}"
 
     def add_idade(self, idades: int):
         self.idades.append(5, idades)
