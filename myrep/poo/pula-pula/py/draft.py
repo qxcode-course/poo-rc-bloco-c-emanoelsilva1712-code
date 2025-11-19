@@ -16,41 +16,47 @@ class Pessoa:
         self.__nome = nome
 
     def __str__(self):
-        return f"{self.nome}:{self.idade}"
+        return f"{self.__nome}:{self.__idade}"
     
 class Pula:
     def __init__(self):
-        self.fila: list[Pessoa] = []
-        self.dentro: list[Pessoa] = []
+        self.__fila: list[Pessoa] = []
+        self.__dentro: list[Pessoa] = []
 
-    def arrive(self, pessoa):
-        self.fila.insert(0, pessoa)
+    def arrive(self, nome: str, age: int):
+        pessoa = Pessoa(nome, age)
+        self.__fila.insert(0, pessoa)
 
     def enter(self):
-        if self.fila:
-            criança = self.fila.pop(0)
-            self.dentro.append(criança)
+        if not self.__fila:
+            print(f"fila vazia")
+        self.__dentro.insert(0, self.__fila[len(self.__fila)-1])
+        self.__fila.pop(len(self.__fila)-1)
 
     def leave(self):
-        if self.dentro:
-            criança = self.dentro.pop(0)
-            self.fila.append(criança)
+        if not self.__dentro:
+            return
+        
+        self.__fila.insert(0, self.__dentro[len(self.__dentro)-1])
+        self.__dentro.pop(len(self.__dentro)-1)
 
-    def remove(self, nome):     #remove da fila
-        for i, p in enumerate(self.fila):
-            if p.nome == nome:
-                self.fila.pop(i)
+    def remove(self, nome: str):     #remove da fila
+        for i, pessoa in enumerate(self.__fila):
+            if pessoa.getNome() == nome:
+                self.__fila.pop(i)
                 return
             
-        for i, p in enumerate(self.dentro):   #remove do pula pula
-            if p.nome == nome:
-                self.dentro.pop(i)
+        for i, pessoa in enumerate(self.__dentro):   #remove do pula pula
+            if pessoa.getNome() == nome:
+                self.__dentro.pop(i)
                 return
             
+        print(f"fail: {nome} nao esta no pula-pula")
+
     def __str__(self):
-        fila = "[" + ", ".join(str(p) for p in self.fila) + "]"
-        dentro = "[" + ", ".join(str(p) for p in self.dentro) + "]"
-        return f"{fila} => {dentro}"
+        fila_str = "[" + ", ".join(str(p) for p in self.__fila) + "]"
+        dentro_str = "[" + ", ".join(str(p) for p in self.__dentro) + "]"
+        return f"{fila_str} => {dentro_str}"
 
 def main():
     pula = Pula()
@@ -62,8 +68,11 @@ def main():
         if args[0] == "end":
             break
 
+        elif args[0] == "show":
+            print(pula)
+
         elif args[0] == "arrive":
-            pula.arrive(Pessoa(args[1], args[2]))
+            pula.arrive(args[1], int(args[2]))
 
         elif args[0] == "enter":
             pula.enter()
@@ -71,10 +80,10 @@ def main():
         elif args[0] == "leave":
             pula.leave()
 
-        elif args[0] == "show":
-            print(pula)
-
         elif args[0] == "remove":
             pula.remove(args[1])
+        else:
+            return "fail: comando invalido"
 
+main()
         

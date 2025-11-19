@@ -21,6 +21,7 @@ expanded:
 tasks:
   poo@budega: '{rate:60, alone:10}'
   poo@lapiseira: '{rate:100, alone:10}'
+  poo@pula-pula: '{rate:100}'
   poo@cinema: '{rate:100}'
 flags:
   quests: 0
