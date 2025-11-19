@@ -12,7 +12,7 @@ class Pessoa:
 
     def add_idade(self, idades: int):
         self.idades.append(5, idades)
-    
+
     def remv_idade(self, idades: int):
         self.idades.pop(5, idades)
 
@@ -27,6 +27,15 @@ class Pessoa:
 
     def remv_idades_especifica(self, idades: int):
         self.idades.pop(3, idades)
+
+    def impressao(self, idade: int):
+        
+
+    def sequencia(self, index: int):
+        self.idades.index[0, 5]
+
+    def valores(self):
+        
 
 def main():
     pessoa = Pessoa()

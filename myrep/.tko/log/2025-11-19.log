@@ -12,3 +12,5 @@
 2025-11-19 00:18:04, MOVE, v:1, k:poo@pula-pula, mode:BACK
 2025-11-19 00:18:19, SELF, v:1, k:poo@lapiseira, rate:100, alone:10
 2025-11-19 00:18:40, SELF, v:1, k:poo@budega, rate:60, alone:10
+2025-11-19 11:08:40, MOVE, v:1, k:poo@array, mode:PICK
+2025-11-19 11:08:42, EXEC, v:1, k:poo@array, mode:LOCK, rate:100, size:63
